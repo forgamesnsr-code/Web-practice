@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дорожные знаки</title>
+    
+    <!-- Подключаем jQuery и jQuery UI для работы всплывающих подсказок -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-signs">
+    <h1>Дорожные знаки</h1>
+
+    <!-- Разбиваем знаки на группы по 5 штук в каждом параграфе -->
+    <p>
+        <img src="img/signs/1.png"  alt="Знак 1"  class="tooltip" data-hint="Выезд на набережную">
+        <img src="img/signs/2.png"  alt="Знак 2"  class="tooltip" data-hint="Скользкая дорога">
+        <img src="img/signs/3.png"  alt="Знак 3"  class="tooltip" data-hint="Двустороннее движение">
+        <img src="img/signs/4.png"  alt="Знак 4"  class="tooltip" data-hint="Дикие животные">
+        <img src="img/signs/5.png"  alt="Знак 5"  class="tooltip" data-hint="Дети">
+    </p>
+
+    <p>
+        <img src="img/signs/6.png"  alt="Знак 6"  class="tooltip" data-hint="Главная дорога">
+        <img src="img/signs/7.png"  alt="Знак 7"  class="tooltip" data-hint="Пересечение с второстепенной дорогой">
+        <img src="img/signs/8.png"  alt="Знак 8"  class="tooltip" data-hint="STOP — движение без остановки запрещено">
+        <img src="img/signs/9.png"  alt="Знак 9"  class="tooltip" data-hint="Одностороннее движение">
+        <img src="img/signs/10.png" alt="Знак 10" class="tooltip" data-hint="Направление движения">
+    </p>
+
+    <p>
+        <img src="img/signs/11.png" alt="Знак 11" class="tooltip" data-hint="Ограничение массы">
+        <img src="img/signs/12.png" alt="Знак 12" class="tooltip" data-hint="Ограничение высоты">
+        <img src="img/signs/13.png" alt="Знак 13" class="tooltip" data-hint="Пешеходный переход">
+        <img src="img/signs/14.png" alt="Знак 14" class="tooltip" data-hint="Ограничение скорости">
+        <img src="img/signs/15.png" alt="Знак 15" class="tooltip" data-hint="Разворот запрещён">
+    </p>
+
+    <!-- Инициализация тултипов по методичке -->
+    <script>
+        $(function () {
+            $(document).tooltip({
+                items: "img",
+                content: function () {
+                    var $element = $(this);
+                    if ($element.is("img")) {
+                        return $element.data('hint');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

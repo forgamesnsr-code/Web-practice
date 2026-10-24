@@ -1,0 +1,369 @@
+/* 
+   ЗАДАНИЕ 1. welcome.html — стили приветственной страницы
+*/
+
+/* Базовый сброс отступов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Основные стили страницы: шрифт, фон, отступы */
+.page-welcome {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    padding: 50px;
+}
+
+/* Оформление текстового блока (делаем аккуратную карточку) */
+.page-welcome p {
+    font-size: 18px;
+    max-width: 700px;
+    padding: 30px;
+    background: #ffffff;
+    border-left: 5px solid #2563eb;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    line-height: 1.6;
+}
+
+/* Выделяем ключевые слова синим цветом */
+.page-welcome strong {
+    color: #2563eb;
+}
+
+/* Подчеркиваем дату, чтобы было видно, что это тег time */
+.page-welcome time {
+    font-weight: bold;
+    color: #475569;
+    border-bottom: 2px dashed #94a3b8;
+}
+
+
+/* 
+   ЗАДАНИЕ 2. signs.html — стили страницы с дорожными знаками
+*/
+
+/* Основные стили страницы: шрифт, фон, отступы */
+.page-signs {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    padding: 30px;
+}
+
+/* Заголовок страницы */
+.page-signs h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1e3a8a;
+    font-size: 32px;
+}
+
+/* Блоки для каждого ряда знаков (белые карточки) */
+.page-signs p {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 0;       /* Убираем отступ между рядами */
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 0;       /* Убираем скругления у всех рядов */
+    box-shadow: none;       /* Убираем тени */
+}
+
+/* Обязательные стили для jQuery Tooltip из методички */
+.tooltip {
+    position: relative;
+}
+
+.tooltip .ui-tooltip {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 5px;
+    z-index: 1;
+}
+
+/* Размеры картинок и плавное увеличение при наведении */
+img.tooltip {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+img.tooltip:hover {
+    transform: scale(1.1);
+}
+
+/* Перекрашиваем стандартную подсказку jQuery UI в синий цвет */
+.ui-tooltip {
+    max-width: 300px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    background: #1e3a8a !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+}
+/* Скругляем только самый верхний ряд */
+.page-signs p:first-of-type {
+    border-radius: 10px 10px 0 0;
+}
+
+/* Скругляем только самый нижний ряд */
+.page-signs p:last-of-type {
+    border-radius: 0 0 10px 10px;
+}
+
+
+/* 
+   ЗАДАНИЕ 3. 404_page.html — стили страницы ошибки 404
+*/
+
+/* Основные стили страницы: фон с градиентом, шрифт, выравнивание по центру */
+.page-404 {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: rgba(30, 58, 138, 0.15);
+    color: #1e3a8a;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Белая карточка по центру с синей полоской сверху */
+.page-404 .container {
+    max-width: 700px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 50px 40px;
+    box-shadow: 0 10px 30px rgba(30, 58, 138, 0.15);
+    border-top: 5px solid #2563eb;
+}
+
+/* Иконка и крупный код ошибки */
+.page-404 .icon {
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+
+.page-404 .error-code {
+    font-size: 120px;
+    font-weight: 900;
+    line-height: 1;
+    color: #2563eb;
+}
+
+/* Стили заголовка и текста */
+.page-404 h1 {
+    font-size: 28px;
+    margin: 20px 0 15px;
+    color: #1e3a8a;
+}
+
+.page-404 p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 30px;
+}
+
+/* Блок для кнопок навигации */
+.page-404 .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Главная кнопка (синяя) */
+.page-404 .links a {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Эффект при наведении на главную кнопку */
+.page-404 .links a:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* Вторичная кнопка (прозрачная с синей рамкой) */
+.page-404 .links a.secondary {
+    background-color: transparent;
+    color: #2563eb;
+    border: 2px solid #2563eb;
+}
+
+.page-404 .links a.secondary:hover {
+    background-color: #eff6ff;
+}
+
+
+/* 
+   ЗАДАНИЕ 4. todo_list.html — стили для списка дел
+*/
+
+/* Основные стили страницы: фон с картинкой и синей заливкой, высота на весь экран */
+.page-todo {
+    height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(rgba(30, 58, 138, 0.75), rgba(30, 58, 138, 0.75)), 
+                url('../img/bg.jpg') center/cover no-repeat;
+}
+
+/* Цветовые переменные, чтобы было удобно менять палитру */
+.page-todo {
+    --blue-main: #2563eb;
+    --blue-dark: #1e40af;
+    --blue-light: #eff6ff;
+    --red-btn: #ef4444;
+    --text-dark: #1e293b;
+}
+
+/* Белое окно по центру экрана */
+.page-todo .container {
+    width: 40%;
+    min-width: 400px;
+    background: #ffffff;
+    border-radius: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Заголовок приложения */
+.page-todo .title {
+    text-align: center;
+    padding: 25px 20px 10px;
+    color: var(--blue-dark);
+    font-size: 24px;
+}
+
+/* Строка для ввода новой задачи */
+.page-todo #newtask {
+    display: flex;
+    padding: 15px 20px 30px;
+    gap: 10px;
+}
+
+/* Само поле ввода */
+.page-todo #newtask input {
+    flex: 1;
+    height: 50px;
+    padding: 0 15px;
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+/* Подсветка рамки при клике на поле */
+.page-todo #newtask input:focus {
+    border-color: var(--blue-main);
+}
+
+/* Кнопка добавления (квадратная, с иконкой) */
+.page-todo #newtask button {
+    width: 50px;
+    height: 50px;
+    background: var(--blue-main);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.page-todo #newtask button:hover {
+    background: var(--blue-dark);
+}
+
+/* Контейнер, в который JS будет добавлять задачи */
+.page-todo #tasks {
+    padding: 0 20px 30px;
+}
+
+/* Карточка одной задачи (с синей полоской слева) */
+.page-todo .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--blue-light);
+    border-left: 4px solid var(--blue-main);
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 10px;
+    transition: box-shadow 0.2s;
+}
+
+.page-todo .task:hover {
+    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.15);
+}
+
+/* Текст самой задачи */
+.page-todo .task span {
+    font-size: 16px;
+    color: var(--text-dark);
+    word-break: break-word;
+    flex: 1;
+}
+
+/* Красная кнопка удаления */
+.page-todo .task button {
+    width: 36px;
+    height: 36px;
+    background: var(--red-btn);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.page-todo .task button:hover {
+    background: #dc2626;
+}
+
+/* Легкое нажатие кнопки */
+.page-todo .task button:active {
+    transform: scale(0.95);
+}
+
+
+/* 
+   АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ
+*/
+
+@media (max-width: 600px) {
+    .page-404 .error-code { font-size: 90px; }
+    .page-404 .container { padding: 30px 20px; }
+    .page-404 h1 { font-size: 24px; }
+    
+    .page-todo .container { width: 90%; min-width: unset; }
+}
