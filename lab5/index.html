@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechnoMarket — Интернет-магазин электроники</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Шапка -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <a href="#" class="logo" aria-label="TechnoMarket — на главную">
+        <span class="logo-icon">🛒</span>
+        <span class="logo-text">TechnoMarket</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Основная навигация">
+        <ul>
+          <li><a href="#catalog" class="active">Каталог</a></li>
+          <li><a href="#popular">Популярное</a></li>
+          <li><a href="#cart">Корзина</a></li>
+          <li><a href="#footer">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <form class="search-form" role="search" aria-label="Поиск товаров">
+        <label for="search" class="visually-hidden">Поиск товаров</label>
+        <input type="search" id="search" placeholder="Поиск товаров..." name="q">
+        <button type="submit">Найти</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- Основной контент -->
+  <main>
+
+    <!-- Главный баннер -->
+    <section class="hero container" aria-label="Рекламный баннер">
+      <div class="hero-content">
+        <span class="hero-badge">Товары недели</span>
+        <h1>Современные ноутбуки</h1>
+        <p>Высокая производительность для работы и учебы. Лучшие предложения сезона.</p>
+        <a href="#catalog" class="btn btn-primary">Смотреть каталог</a>
+      </div>
+      <div class="hero-image">
+        <img src="images/hero-laptop.jpg" alt="Современный ноутбук на рабочем столе">
+      </div>
+    </section>
+
+    <!-- Двухколоночный макет: каталог + корзина -->
+    <div class="layout container">
+
+      <!-- Каталог товаров -->
+      <section id="catalog" class="catalog" aria-labelledby="catalog-title">
+        <h2 id="catalog-title">Популярные товары</h2>
+        <div class="product-grid">
+
+          <article class="card">
+            <img src="images/product-1.jpg" alt="Ноутбук ASUS Vivobook 15">
+            <h3>Ноутбук ASUS Vivobook 15</h3>
+            <p class="card-desc">15.6", Intel Core i5, 16 ГБ RAM, 512 ГБ SSD</p>
+            <p class="price">54 990 ₽</p>
+            <button type="button" class="btn btn-add">В корзину</button>
+          </article>
+
+          <article class="card">
+            <img src="images/product-2.jpg" alt="Смартфон Samsung Galaxy S24">
+            <h3>Смартфон Samsung Galaxy S24</h3>
+            <p class="card-desc">6.2", 8 ГБ RAM, 256 ГБ, 5G</p>
+            <p class="price">69 990 ₽</p>
+            <button type="button" class="btn btn-add">В корзину</button>
+          </article>
+
+          <article class="card">
+            <img src="images/product-3.jpg" alt="Наушники Sony WH-1000XM5">
+            <h3>Наушники Sony WH-1000XM5</h3>
+            <p class="card-desc">Беспроводные, шумоподавление</p>
+            <p class="price">29 990 ₽</p>
+            <button type="button" class="btn btn-add">В корзину</button>
+          </article>
+
+          <article class="card">
+            <img src="images/product-4.jpg" alt="Планшет Xiaomi Pad 6">
+            <h3>Планшет Xiaomi Pad 6</h3>
+            <p class="card-desc">11", 8 ГБ RAM, 256 ГБ</p>
+            <p class="price">34 990 ₽</p>
+            <button type="button" class="btn btn-add">В корзину</button>
+          </article>
+
+          <article class="card">
+            <img src="images/product-5.jpg" alt="Смарт-часы Apple Watch SE">
+            <h3>Смарт-часы Apple Watch SE</h3>
+            <p class="card-desc">GPS, 40 мм, алюминий</p>
+            <p class="price">24 990 ₽</p>
+            <button type="button" class="btn btn-add">В корзину</button>
+          </article>
+
+          <article class="card">
+            <img src="images/product-6.jpg" alt="Наушники Apple AirPods Pro 2">
+            <h3>Наушники Apple AirPods Pro 2</h3>
+            <p class="card-desc">Беспроводные, активное шумоподавление</p>
+            <p class="price">26 990 ₽</p>
+            <button type="button" class="btn btn-add">В корзину</button>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Боковая панель: корзина -->
+      <aside id="cart" class="sidebar" aria-labelledby="cart-title">
+        <h2 id="cart-title">Ваша корзина</h2>
+        <ul class="cart-list">
+          <li class="cart-item">
+            <span class="cart-name">Смартфон Samsung Galaxy S24</span>
+            <span class="cart-qty">1 шт.</span>
+            <span class="cart-price">69 990 ₽</span>
+          </li>
+          <li class="cart-item">
+            <span class="cart-name">Наушники Sony WH-1000XM5</span>
+            <span class="cart-qty">1 шт.</span>
+            <span class="cart-price">29 990 ₽</span>
+          </li>
+          <li class="cart-item">
+            <span class="cart-name">Чехол для смартфона</span>
+            <span class="cart-qty">1 шт.</span>
+            <span class="cart-price">2 490 ₽</span>
+          </li>
+        </ul>
+        <div class="cart-total">
+          <span>Итого:</span>
+          <strong>102 470 ₽</strong>
+        </div>
+        <a href="#" class="btn btn-checkout">Оформить заказ</a>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Подвал -->
+  <footer id="footer" class="site-footer">
+    <div class="footer-inner container">
+      <div class="footer-col">
+        <p class="footer-logo">🛒 TechnoMarket</p>
+        <p>Техника для лучшей жизни</p>
+      </div>
+      <div class="footer-col">
+        <h3>Покупателям</h3>
+        <ul>
+          <li><a href="#">Доставка и оплата</a></li>
+          <li><a href="#">Возврат товара</a></li>
+          <li><a href="#">Гарантия</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Контакты</h3>
+        <address>
+          Москва, ул. Технологическая, 10<br>
+          <a href="tel:+74951234567">+7 (495) 123-45-67</a><br>
+          <a href="mailto:info@technomarket.ru">info@technomarket.ru</a>
+        </address>
+      </div>
+    </div>
+    <p class="copyright">© 2025 TechnoMarket. Все права защищены.</p>
+  </footer>
+
+</body>
+</html>
