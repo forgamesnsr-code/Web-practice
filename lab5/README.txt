@@ -18,5 +18,5 @@
 - **Доступность:** `alt` у изображений, `aria-label`, `label` для поиска, `:focus-visible`
 
 ## Ссылки
-- Репозиторий: https://github.com/forgamesnsr-code/Web-practice/tree/main/lab-5
-- Опубликованная страница: https://forgamesnsr-code.github.io/Web-practice/lab-5/
+- Репозиторий: https://github.com/forgamesnsr-code/Web-practice/tree/main/lab5
+- Опубликованная страница: https://forgamesnsr-code.github.io/Web-practice/lab5
