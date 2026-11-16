@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FitWay — тренировки, питание и забота о здоровье в одном приложении.">
+  <title>FitWay — лучшая версия начинается сегодня</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Скрытый чекбокс для ручного переключения -->
+  <input type="checkbox" id="view-toggle" class="view-toggle">
+
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="#home" aria-label="FitWay — на главную">
+          <span class="logo-mark" aria-hidden="true">↗</span><span>Fit<span>Way</span></span>
+        </a>
+        
+        <!-- Ручное переключение Desktop/Mobile -->
+        <label for="view-toggle" class="view-btn">
+          <span class="view-desktop">Показать Mobile</span>
+          <span class="view-mobile">Показать Desktop</span>
+        </label>
+
+        <!-- Бургер-меню для мобильной версии -->
+        <input class="menu-toggle" type="checkbox" id="menu-toggle" aria-label="Открыть меню">
+        <label class="burger" for="menu-toggle" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </label>
+
+        <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
+          <a href="#workouts">Тренировки</a>
+          <a href="#benefits">Преимущества</a>
+          <a href="#app">Приложение</a>
+          <a href="#newsletter">Новости</a>
+        </nav>
+        <a class="button button-small header-cta" href="#app">Скачать приложение</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow"><span></span> ЗДОРОВЬЕ · ДВИЖЕНИЕ · РЕЗУЛЬТАТ</p>
+            <h1>Лучшая версия начинается <em>сегодня</em></h1>
+            <p class="hero-description">Тренировки, планы питания и персональные рекомендации — всё в одном приложении.</p>
+            <div class="hero-actions">
+              <a class="button" href="#app">Начать бесплатно <span aria-hidden="true">→</span></a>
+              <a class="text-link" href="#workouts">Выбрать тренировку</a>
+            </div>
+            <div class="stats" aria-label="Статистика FitWay">
+              <div><strong>10 000+</strong><span>пользователей</span></div>
+              <div><strong>500+</strong><span>тренировок</span></div>
+              <div><strong>4.9</strong><span>рейтинг в магазинах</span></div>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-orbit orbit-one"></div>
+            <div class="hero-orbit orbit-two"></div>
+            <img src="images/hero-athlete.png" alt="Спортсменка с ковриком для тренировок">
+            <div class="floating-note"><span class="note-icon">✦</span><span>Сильнее<br>каждый день!</span></div>
+            <div class="hero-tag"><span class="tag-dot"></span> Твой темп. Твои цели.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section workouts-section" id="workouts">
+        <div class="container">
+          <div class="section-heading">
+            <div><p class="eyebrow">ВЫБИРАЙ СВОЁ</p><h2>Популярные тренировки</h2></div>
+            <a class="text-link" href="#app">Смотреть все <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="workout-grid">
+            <article class="workout-card">
+              <div class="workout-image image-strength"><img src="images/strength.png" alt="Гантели"></div>
+              <div class="card-content"><div class="card-title-row"><h3>Силовые тренировки</h3><span class="level">Средний</span></div><p>Эффективные комплексы для всего тела</p><div class="card-meta"><span>◷ 30 мин</span><span>↗ 4.9</span></div></div>
+            </article>
+            <article class="workout-card">
+              <div class="workout-image image-yoga"><img src="images/yoga.png" alt="Коврик для йоги"></div>
+              <div class="card-content"><div class="card-title-row"><h3>Йога</h3><span class="level">Любой</span></div><p>Гибкость, баланс и спокойствие</p><div class="card-meta"><span>◷ 20 мин</span><span>↗ 4.9</span></div></div>
+            </article>
+            <article class="workout-card">
+              <div class="workout-image image-cardio"><img src="images/cardio.png" alt="Скакалка"></div>
+              <div class="card-content"><div class="card-title-row"><h3>Кардио</h3><span class="level">Средний</span></div><p>Сжигание калорий и выносливость</p><div class="card-meta"><span>◷ 25 мин</span><span>↗ 4.8</span></div></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section benefits-section" id="benefits">
+        <div class="container">
+          <div class="section-heading centered-heading"><div><p class="eyebrow">БОЛЬШЕ, ЧЕМ ТРЕНИРОВКИ</p><h2>Почему выбирают FitWay?</h2></div></div>
+          <div class="benefit-grid">
+            <article class="benefit-card"><div class="benefit-icon">↗</div><h3>Удобные тренировки</h3><p>Занимайтесь где угодно и когда удобно именно вам.</p></article>
+            <article class="benefit-card"><div class="benefit-icon">●</div><h3>Планы питания</h3><p>Сбалансированное меню на каждый день без сложностей.</p></article>
+            <article class="benefit-card"><div class="benefit-icon">▥</div><h3>Отслеживание прогресса</h3><p>Наглядная статистика помогает видеть достижения.</p></article>
+            <article class="benefit-card"><div class="benefit-icon">♥</div><h3>Забота о здоровье</h3><p>Рекомендации и привычки для хорошего самочувствия.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section app-section" id="app">
+        <div class="container app-panel">
+          <div class="app-copy">
+            <p class="eyebrow eyebrow-light">ТВОЯ МОТИВАЦИЯ ВСЕГДА РЯДОМ</p>
+            <h2>Начните путь к лучшей версии себя</h2>
+            <p>Планируйте занятия, следите за результатами и получайте поддержку — всё под рукой.</p>
+            <div class="store-buttons">
+              <a class="store-button" href="#newsletter"><span class="store-symbol">●</span><span><small>ЗАГРУЗИТЕ В</small><strong>App Store</strong></span></a>
+              <a class="store-button" href="#newsletter"><span class="store-symbol play">▶</span><span><small>ДОСТУПНО В</small><strong>Google Play</strong></span></a>
+            </div>
+          </div>
+          <div class="phone-scene">
+            <div class="phone-glow"></div>
+            <div class="phone">
+              <div class="phone-speaker"></div>
+              <div class="phone-screen">
+                <div class="phone-top"><span>9:41</span><span>●●●</span></div>
+                <div class="mini-logo"><span class="logo-mark">↗</span> FitWay</div>
+                <p class="phone-kicker">ТВОЙ ПЛАН НА СЕГОДНЯ</p>
+                <h3>Двигайся к цели!</h3>
+                <div class="phone-illustration">🏃</div>
+                <div class="phone-progress"><span></span></div>
+                <div class="phone-stat"><b>25 мин</b><small>активности сегодня</small></div>
+                <div class="phone-button">Начать тренировку</div>
+              </div>
+            </div>
+            <div class="phone-bubble">+1 к твоей цели ✨</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section newsletter-section" id="newsletter">
+        <div class="container newsletter-inner">
+          <div><p class="eyebrow">ОСТАВАЙТЕСЬ НА СВЯЗИ</p><h2>Полезное — на вашу почту</h2><p>Получайте идеи тренировок, советы по питанию и новости FitWay.</p></div>
+          <form class="newsletter-form" id="newsletter-form">
+            <label class="sr-only" for="email">Ваш email</label>
+            <input id="email" name="email" type="email" placeholder="Введите ваш email" required>
+            <button class="button" type="submit">Подписаться <span aria-hidden="true">→</span></button>
+            <p class="form-message" id="form-message" aria-live="polite">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="logo footer-logo" href="#home"><span class="logo-mark">↗</span><span>Fit<span>Way</span></span></a>
+        <p>© 2025 FitWay. Все права защищены.</p>
+        <div class="footer-links"><a href="#newsletter">Политика конфиденциальности</a><a href="#newsletter">Условия использования</a></div>
+        <a class="back-top" href="#home" aria-label="Наверх">↑</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
