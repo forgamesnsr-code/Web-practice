@@ -802,3 +802,49 @@ body.is-desktop .header-inner {
         transition-duration: 0.01ms !important;
     }
 }
+
+
+/* Фотографии проекта FitWay */
+.training-picture {
+    height: 190px;
+    background: #e8f6ec;
+}
+
+.training-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 38%;
+}
+
+.training-level {
+    z-index: 1;
+}
+
+.schedule-photo {
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(20, 45, 35, 0.10);
+}
+
+.recommendation-image {
+    display: block;
+    width: 76px;
+    height: 76px;
+    flex: 0 0 76px;
+    object-fit: cover;
+    border-radius: 13px;
+}
+
+@media (max-width: 480px) {
+    .training-picture { height: 165px; }
+    .recommendation-image {
+        width: 66px;
+        height: 66px;
+        flex-basis: 66px;
+    }
+}

@@ -56,29 +56,6 @@ button:focus-visible, a:focus-visible {
 	outline-offset: 4px;
 }
 
-.ambient {
-	position: fixed;
-	z-index: -1;
-	width: 420px;
-	height: 420px;
-	border-radius: 50%;
-	filter: blur(110px);
-	opacity: .1;
-	pointer-events: none;
-}
-
-.ambient--one {
-	top: 12%;
-	left: -220px;
-	background: var(--green);
-}
-
-.ambient--two {
-	right: -220px;
-	bottom: 0;
-	background: var(--green-light);
-}
-
 .app-shell {
 	width: min(1160px, calc(100% - 64px));
 	margin: 0 auto;
@@ -109,7 +86,6 @@ button:focus-visible, a:focus-visible {
 	border-radius: 11px;
 	color: #080914;
 	background: linear-gradient(135deg, var(--green-light), var(--green));
-	box-shadow: 0 0 22px rgba(29, 185, 84, .25);
 	font-weight: 900;
 }
 
@@ -213,7 +189,6 @@ h1 {
 
 h1 span {
 	color: var(--green);
-	text-shadow: 0 0 28px rgba(29, 185, 84, .28);
 }
 
 .welcome__text {
@@ -248,12 +223,7 @@ h1 span {
 	border-radius: var(--radius);
 	background: var(--panel);
 	box-shadow: 0 18px 55px rgba(0, 0, 0, .24);
-	transition: transform var(--ease), box-shadow var(--ease);
-}
-
-.panel:hover {
-	transform: translateY(-3px);
-	box-shadow: 0 26px 60px rgba(0, 0, 0, .35);
+	transition: box-shadow var(--ease);
 }
 
 .now-playing {
@@ -287,13 +257,12 @@ h1 span {
 	color: #b8b4d2;
 	font-size: 22px;
 	cursor: pointer;
-	transition: color var(--ease), background var(--ease), transform var(--ease);
+	transition: color var(--ease), background var(--ease);
 }
 
 .icon-button:hover, .icon-button:focus-visible {
 	color: var(--green);
 	background: rgba(29, 185, 84, .1);
-	transform: scale(1.08);
 	outline: none;
 }
 
@@ -310,7 +279,6 @@ h1 span {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	transition: transform .7s ease, filter .7s ease;
 }
 
 .cover-wrap::after {
@@ -321,15 +289,6 @@ h1 span {
 	background: linear-gradient(0deg, rgba(18, 18, 18, .58), transparent 42%, rgba(18, 18, 18, .08));
 	opacity: .72;
 	transition: opacity .35s ease;
-}
-
-.cover-wrap:hover .cover {
-	transform: scale(1.055);
-	filter: saturate(1.18);
-}
-
-.cover-wrap:hover::after {
-	opacity: .42;
 }
 
 .cover-tag {
@@ -389,7 +348,6 @@ h1 span {
 	height: 100%;
 	border-radius: inherit;
 	background: var(--green);
-	box-shadow: 0 0 13px rgba(29, 185, 84, .35);
 	transition: width var(--ease);
 }
 
@@ -403,12 +361,7 @@ h1 span {
 	border-radius: 50%;
 	background: var(--green);
 	transform: translate(-50%, -50%);
-	box-shadow: 0 0 12px var(--green);
 	transition: left var(--ease), transform var(--ease);
-}
-
-.progress:hover .progress__knob {
-	transform: translate(-50%, -50%) scale(1.15);
 }
 
 .time-row {
@@ -434,12 +387,11 @@ h1 span {
 	color: #b7b7d0;
 	font-size: 17px;
 	cursor: pointer;
-	transition: color .2s ease, transform .2s ease;
+	transition: color .2s ease;
 }
 
 .control-button:hover, .control-button:focus-visible {
 	color: var(--green);
-	transform: scale(1.15);
 	outline: none;
 }
 
@@ -452,15 +404,12 @@ h1 span {
 	border-radius: 50%;
 	color: #000;
 	background: var(--green);
-	box-shadow: 0 0 28px rgba(29, 185, 84, .24);
 	font-size: 17px;
 	cursor: pointer;
-	transition: transform var(--ease), box-shadow var(--ease);
+	transition: box-shadow var(--ease);
 }
 
 .play-button:hover, .play-button:focus-visible {
-	transform: scale(1.09);
-	box-shadow: 0 0 35px rgba(29, 185, 84, .42);
 	outline: none;
 }
 
@@ -538,12 +487,11 @@ h1 span {
 	background: transparent;
 	text-align: left;
 	cursor: pointer;
-	transition: background var(--ease), transform var(--ease);
+	transition: background var(--ease);
 }
 
 .track-item:hover, .track-item:focus-visible {
 	background: rgba(255, 255, 255, .055);
-	transform: translateX(4px);
 	outline: none;
 }
 
@@ -560,7 +508,6 @@ h1 span {
 	width: 2px;
 	border-radius: 4px;
 	background: var(--green);
-	box-shadow: 0 0 9px var(--green);
 }
 
 .track-number {
@@ -664,13 +611,13 @@ h1 span {
 	border: 1px solid var(--panel-border);
 	border-radius: 16px;
 	padding: 14px;
-	transition: transform var(--ease), box-shadow var(--ease);
+	transition: box-shadow var(--ease);
 	cursor: pointer;
 	position: relative;
 }
 
 .popular-card:hover {
-	transform: translateY(-5px);
+	transform: scale(1.03);
 	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
@@ -689,15 +636,11 @@ h1 span {
 	transition: transform 0.3s ease;
 }
 
-.popular-card:hover .popular-cover img {
-	transform: scale(1.05);
-}
-
 .play-overlay {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%) scale(0.8);
+	transform: translate(-50%, -50%);
 	width: 48px;
 	height: 48px;
 	border-radius: 50%;
@@ -709,13 +652,12 @@ h1 span {
 	justify-content: center;
 	font-size: 16px;
 	opacity: 0;
-	transition: all 0.2s ease;
+	transition: opacity 0.2s ease;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .popular-card:hover .play-overlay {
 	opacity: 1;
-	transform: translate(-50%, -50%) scale(1);
 }
 
 .popular-info h3 {
@@ -793,11 +735,76 @@ h1 span {
 	}
 }
 
+
+
+/* Эффекты по требованиям варианта: анимация только для индикации. */
+.progress__fill {
+	background: linear-gradient(90deg, #159447, var(--green), #72e995);
+	animation: progress-indicator 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes progress-indicator {
+	from { opacity: .75; }
+	to { opacity: 1; }
+}
+
+.track-item--active .track-number--playing {
+	animation: active-track 1.2s ease-in-out infinite;
+}
+
+@keyframes active-track {
+	0%, 100% { opacity: .65; }
+	50% { opacity: 1; }
+}
+
+/* Активный трек отмечен декоративной полосой через ::before. */
+.track-item--active::before {
+	content: "";
+}
+
+/* Значения прогресса карточек задаются классами, без inline-style. */
+.card-progress-fill--30 { width: 30%; }
+.card-progress-fill--60 { width: 60%; }
+.card-progress-fill--45 { width: 45%; }
+.card-progress-fill--20 { width: 20%; }
+
+.play-overlay:focus-visible {
+	opacity: 1;
+	outline: 2px solid #fff;
+	outline-offset: 3px;
+}
+
+/* Адаптация шапки на узких экранах. */
+@media (max-width: 560px) {
+	.topbar {
+		height: auto;
+		min-height: 72px;
+		flex-wrap: wrap;
+		gap: 14px;
+		padding: 14px 0;
+	}
+	.main-nav {
+		order: 3;
+		width: 100%;
+		justify-content: space-between;
+		gap: 12px;
+	}
+	.main-nav__link--active::after {
+		bottom: -8px;
+	}
+	.profile {
+		margin-left: auto;
+	}
+	.welcome {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 16px;
+	}
+}
+
 @media (prefers-reduced-motion: reduce) {
-	*, *::before, *::after {
-		scroll-behavior: auto !important;
-		animation-duration: .01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: .01ms !important;
+	.progress__fill,
+	.track-item--active .track-number--playing {
+		animation: none;
 	}
 }
