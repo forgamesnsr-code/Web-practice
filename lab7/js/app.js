@@ -1,51 +1,57 @@
-
-const buttons = document.querySelectorAll(".view-button");
+/* FitWay: ручное переключение Desktop/Mobile и автоматический режим. */
+const viewButtons = document.querySelectorAll(".view-button");
+const startButton = document.querySelector("#start-button");
 
 let currentView = "auto";
 
-// Переключение режима страницы
-function setView(view) {
-    currentView = view;
+function updateAutoView() {
+    // CSS media query отвечает за реальную перестройку макета.
+    // Атрибут нужен для наглядного определения текущего автоматического режима.
+    if (currentView === "auto") {
+        document.body.dataset.autoView = window.innerWidth <= 768 ? "mobile" : "desktop";
+    }
+}
 
+function setView(view) {
+    if (!["auto", "desktop", "mobile"].includes(view)) {
+        return;
+    }
+
+    currentView = view;
     document.body.classList.remove("is-mobile", "is-desktop");
 
     if (view === "mobile") {
         document.body.classList.add("is-mobile");
-    }
-
-    if (view === "desktop") {
+    } else if (view === "desktop") {
         document.body.classList.add("is-desktop");
     }
 
-    buttons.forEach(function(button) {
-        button.classList.remove("active");
-
-        if (button.dataset.view === view) {
-            button.classList.add("active");
-        }
+    viewButtons.forEach(function (button) {
+        const isActive = button.dataset.view === view;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
     });
+
+    updateAutoView();
 }
 
-// Обработка нажатий на кнопки
-buttons.forEach(function(button) {
-    button.addEventListener("click", function() {
+viewButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
         setView(button.dataset.view);
     });
 });
 
-// При изменении размера окна обновляется Auto
-window.addEventListener("resize", function() {
-    if (currentView === "auto") {
-        setView("auto");
-    }
-});
+// В режиме Auto CSS автоматически перестраивает страницу на границе 768 px.
+// Обработчик обновляет информацию о текущем режиме при изменении окна.
+window.addEventListener("resize", updateAutoView);
 
-// Начальный режим
+if (startButton) {
+    startButton.addEventListener("click", function () {
+        startButton.textContent = "Тренировка началась! ✓";
+        startButton.setAttribute("aria-pressed", "true");
+        startButton.disabled = true;
+    });
+}
+
+// Начальное состояние страницы.
 setView("auto");
-
-// Кнопка начала тренировки
-const startButton = document.querySelector("#start-button");
-
-startButton.addEventListener("click", function() {
-    startButton.textContent = "Тренировка началась! ✓";
-});

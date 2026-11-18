@@ -15,7 +15,7 @@
 
 		<!-- Шапка -->
 		<header class="topbar">
-			<a class="brand" href="#">
+			<a class="brand" href="#player" aria-label="AMP — на главную">
 				<span class="brand__mark">S</span>
 				<span>AMP<span class="brand__dot">.</span></span>
 			</a>
@@ -72,7 +72,7 @@
 					</div>
 
 					<div class="progress-area">
-						<div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="38">
+						<div class="progress" role="progressbar" aria-label="Позиция воспроизведения" aria-valuemin="0" aria-valuemax="100" aria-valuenow="38">
 							<span class="progress__fill"></span>
 							<span class="progress__knob"></span>
 						</div>
@@ -82,7 +82,7 @@
 					<div class="player-controls">
 						<button class="control-button control-button--small" type="button" aria-label="Перемешать">⤨</button>
 						<button class="control-button" type="button" aria-label="Предыдущий">◀|</button>
-						<button class="play-button" type="button" aria-label="Воспроизвести">
+						<button class="play-button" type="button" aria-label="Воспроизвести" aria-pressed="false">
 							<span class="play-symbol">▶</span>
 						</button>
 						<button class="control-button" type="button" aria-label="Следующий">|▶</button>
@@ -110,7 +110,7 @@
 						</div>
 
 						<div class="track-list">
-							<button class="track-item track-item--active" type="button">
+							<button class="track-item track-item--active" type="button" aria-current="true">
 								<span class="track-number track-number--playing">♫</span>
 								<span class="track-item__text"><strong>Midnight Pulse</strong><small>Nova Lights</small></span>
 								<span class="track-duration">3:42</span>

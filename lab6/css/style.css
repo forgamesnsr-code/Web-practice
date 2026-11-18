@@ -844,3 +844,109 @@ h1 span {
 		width: 100%;
 	}
 }
+
+/* Дополнительные состояния и эффекты для проверки задания */
+#player {
+  min-width: 0;
+}
+
+/* Карточка увеличивается плавно и не меняет размеры сетки */
+.popular-card {
+  transform: scale(1);
+  transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
+  transform-origin: center;
+}
+
+.popular-card:hover {
+  transform: scale(1.03);
+  border-color: rgba(29, 185, 84, .35);
+}
+
+/* Доступный фокус клавиатуры для всех основных действий */
+.play-button:focus-visible,
+.control-button:focus-visible,
+.icon-button:focus-visible,
+.track-item:focus-visible,
+.play-overlay:focus-visible,
+.main-nav__link:focus-visible,
+.text-link:focus-visible {
+  outline: 2px solid var(--green-light);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 4px rgba(29, 185, 84, .16);
+}
+
+.play-button {
+  transition: transform var(--ease), box-shadow var(--ease), background var(--ease);
+}
+
+.play-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 8px rgba(29, 185, 84, .13), 0 8px 24px rgba(29, 185, 84, .28);
+}
+
+/* Градиент движется внутри заполненной части: это только визуальная индикация */
+.progress__fill {
+  background: linear-gradient(90deg, #159447 0%, var(--green) 45%, #8af0a5 70%, var(--green) 100%);
+  background-size: 220% 100%;
+  animation: progress-shimmer 2.8s linear infinite;
+}
+
+@keyframes progress-shimmer {
+  from { background-position: 100% 0; }
+  to { background-position: -120% 0; }
+}
+
+/* Декоративный световой акцент активного трека */
+.track-item--active::after {
+  content: "";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green-light);
+  box-shadow: 0 0 10px var(--green);
+  transform: translateY(-50%);
+  animation: active-dot 1.4s ease-in-out infinite;
+}
+
+@keyframes active-dot {
+  0%, 100% { opacity: .45; transform: translateY(-50%) scale(.8); }
+  50% { opacity: 1; transform: translateY(-50%) scale(1.25); }
+}
+
+/* Явный пример атрибутного селектора */
+button[aria-pressed="true"] {
+  color: var(--green-light);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 0 28px;
+  border-top: 1px solid rgba(255, 255, 255, .07);
+  color: #777b9a;
+  font-size: 10px;
+}
+
+.footer a {
+  color: var(--green);
+  transition: color var(--ease), transform var(--ease);
+}
+
+.footer a:hover {
+  color: var(--green-light);
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

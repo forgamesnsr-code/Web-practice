@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -23,18 +22,19 @@
                 <span>Fit<span>Way</span></span>
             </a>
 
-            <nav class="main-nav">
+            <nav class="main-nav" aria-label="Основная навигация">
                 <a href="#profile">Главная</a>
                 <a href="#statistics">Статистика</a>
                 <a href="#training">Тренировки</a>
                 <a href="#schedule">Расписание</a>
+                <a href="#recommendations">Советы</a>
             </nav>
 
             <div class="header-right">
                 <div class="view-switch">
-                    <button class="view-button active" data-view="auto">Auto</button>
-                    <button class="view-button" data-view="desktop">Desktop</button>
-                    <button class="view-button" data-view="mobile">Mobile</button>
+                    <button type="button" class="view-button active" data-view="auto" aria-pressed="true">Auto</button>
+                    <button type="button" class="view-button" data-view="desktop" aria-pressed="false">Desktop</button>
+                    <button type="button" class="view-button" data-view="mobile" aria-pressed="false">Mobile</button>
                 </div>
 
                 <div class="user-mini">
@@ -171,7 +171,7 @@
                 <span>Планка</span>
             </div>
 
-            <button class="button start-button" id="start-button">
+            <button type="button" class="button start-button" id="start-button" aria-pressed="false">
                 Начать тренировку <span>→</span>
             </button>
         </section>
