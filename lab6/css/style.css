@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
-
+/* Дизайн-токены */
 :root {
 	--bg: #121212;
 	--panel: #181818;
@@ -13,7 +12,10 @@
 	--ease: .25s ease;
 }
 
-*, *::before, *::after {
+/* Базовые стили */
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
 }
 
@@ -30,7 +32,8 @@ body {
 	overflow-x: hidden;
 }
 
-button, a {
+button,
+a {
 	font: inherit;
 }
 
@@ -51,16 +54,33 @@ img {
 	max-width: 100%;
 }
 
-button:focus-visible, a:focus-visible {
+button:focus-visible,
+a:focus-visible {
 	outline: 2px solid var(--green);
 	outline-offset: 4px;
 }
 
+/* Сетка страницы */
 .app-shell {
 	width: min(1160px, calc(100% - 64px));
 	margin: 0 auto;
 }
 
+.content-grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
+	gap: 22px;
+	align-items: stretch;
+	margin-bottom: 40px;
+}
+
+.side-column {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+
+/* Шапка */
 .topbar {
 	height: 88px;
 	display: flex;
@@ -105,10 +125,12 @@ button:focus-visible, a:focus-visible {
 	transition: color var(--ease);
 }
 
-.main-nav__link:hover, .main-nav__link--active {
+.main-nav__link:hover,
+.main-nav__link--active {
 	color: var(--text);
 }
 
+/* Активный пункт меню: подчёркивание снизу */
 .main-nav__link--active {
 	position: relative;
 }
@@ -132,7 +154,9 @@ button:focus-visible, a:focus-visible {
 	font-size: 12px;
 }
 
-.profile__status, .live-pill span {
+/* Зелёная точка-индикатор «онлайн» */
+.profile__status,
+.live-pill span {
 	width: 7px;
 	height: 7px;
 	border-radius: 50%;
@@ -151,6 +175,7 @@ button:focus-visible, a:focus-visible {
 	color: var(--text);
 }
 
+/* Приветственный блок */
 .welcome {
 	display: flex;
 	justify-content: space-between;
@@ -175,7 +200,10 @@ button:focus-visible, a:focus-visible {
 	background: var(--green);
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
 	margin-top: 0;
 }
 
@@ -197,6 +225,7 @@ h1 span {
 	font-size: 13px;
 }
 
+/* Пилюля «LIVE» с точкой */
 .live-pill {
 	display: flex;
 	align-items: center;
@@ -210,24 +239,13 @@ h1 span {
 	white-space: nowrap;
 }
 
-.content-grid {
-	display: grid;
-	grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
-	gap: 22px;
-	align-items: stretch;
-	margin-bottom: 40px;
-}
-
+/* Панели */
 .panel {
 	border: 1px solid var(--panel-border);
 	border-radius: var(--radius);
 	background: var(--panel);
 	box-shadow: 0 18px 55px rgba(0, 0, 0, .24);
 	transition: box-shadow var(--ease);
-}
-
-.now-playing {
-	padding: 25px 28px 22px;
 }
 
 .section-heading {
@@ -248,6 +266,14 @@ h1 span {
 	font-size: 9px;
 }
 
+.section-heading--compact {
+	margin-bottom: 17px;
+}
+
+.section-heading--compact h2 {
+	font-size: 17px;
+}
+
 .icon-button {
 	width: 39px;
 	height: 39px;
@@ -260,10 +286,16 @@ h1 span {
 	transition: color var(--ease), background var(--ease);
 }
 
-.icon-button:hover, .icon-button:focus-visible {
+.icon-button:hover,
+.icon-button:focus-visible {
 	color: var(--green);
 	background: rgba(29, 185, 84, .1);
 	outline: none;
+}
+
+/* Блок «сейчас играет» */
+.now-playing {
+	padding: 25px 28px 22px;
 }
 
 .cover-wrap {
@@ -281,6 +313,7 @@ h1 span {
 	object-fit: cover;
 }
 
+/* Затемнение для читаемости подписей поверх обложки */
 .cover-wrap::after {
 	content: "";
 	position: absolute;
@@ -333,6 +366,7 @@ h1 span {
 	letter-spacing: 1px;
 }
 
+/* Ширина прогресса задаётся через переменную --progress */
 .progress {
 	--progress: 38%;
 	position: relative;
@@ -351,6 +385,7 @@ h1 span {
 	transition: width var(--ease);
 }
 
+/* Кружок-ползунок на прогрессе */
 .progress__knob {
 	position: absolute;
 	top: 50%;
@@ -390,7 +425,8 @@ h1 span {
 	transition: color .2s ease;
 }
 
-.control-button:hover, .control-button:focus-visible {
+.control-button:hover,
+.control-button:focus-visible {
 	color: var(--green);
 	outline: none;
 }
@@ -409,7 +445,8 @@ h1 span {
 	transition: box-shadow var(--ease);
 }
 
-.play-button:hover, .play-button:focus-visible {
+.play-button:hover,
+.play-button:focus-visible {
 	outline: none;
 }
 
@@ -441,20 +478,7 @@ h1 span {
 	font-size: 9px;
 }
 
-.side-column {
-	display: flex;
-	flex-direction: column;
-	gap: 18px;
-}
-
-.section-heading--compact {
-	margin-bottom: 17px;
-}
-
-.section-heading--compact h2 {
-	font-size: 17px;
-}
-
+/* Плейлист */
 .playlist {
 	padding: 22px 23px 14px;
 	flex: 1;
@@ -490,11 +514,13 @@ h1 span {
 	transition: background var(--ease);
 }
 
-.track-item:hover, .track-item:focus-visible {
+.track-item:hover,
+.track-item:focus-visible {
 	background: rgba(255, 255, 255, .055);
 	outline: none;
 }
 
+/* Активный трек: маркер слева через ::before */
 .track-item--active {
 	background: rgba(29, 185, 84, .07);
 }
@@ -554,6 +580,7 @@ h1 span {
 	font-variant-numeric: tabular-nums;
 }
 
+/* Карточка-подсказка */
 .tip-card {
 	display: flex;
 	align-items: center;
@@ -584,8 +611,7 @@ h1 span {
 	font-size: 9px;
 }
 
-/* ==================== ПОПУЛЯРНЫЕ ТРЕКИ ==================== */
-
+/* Популярные треки */
 .popular-section {
 	margin-bottom: 40px;
 }
@@ -636,6 +662,7 @@ h1 span {
 	transition: transform 0.3s ease;
 }
 
+/* Кнопка Play показывается при наведении на карточку */
 .play-overlay {
 	position: absolute;
 	top: 50%;
@@ -696,73 +723,7 @@ h1 span {
 	text-align: right;
 }
 
-/* АДАПТИВ */
-@media (max-width: 1024px) {
-	.popular-grid {
-		grid-template-columns: repeat(3, 1fr);
-	}
-}
-
-@media (max-width: 820px) {
-	.app-shell {
-		width: min(620px, calc(100% - 36px));
-	}
-	.content-grid {
-		grid-template-columns: 1fr;
-	}
-	.cover-wrap {
-		height: clamp(230px, 55vw, 340px);
-	}
-	.popular-grid {
-		grid-template-columns: repeat(2, 1fr);
-	}
-}
-
-@media (max-width: 560px) {
-	.app-shell {
-		width: calc(100% - 28px);
-	}
-	.popular-grid {
-		grid-template-columns: 1fr;
-	}
-	.footer {
-		flex-wrap: wrap;
-		line-height: 1.6;
-	}
-	.footer span:nth-child(2) {
-		order: 3;
-		width: 100%;
-	}
-}
-
-
-
-/* Эффекты по требованиям варианта: анимация только для индикации. */
-.progress__fill {
-	background: linear-gradient(90deg, #159447, var(--green), #72e995);
-	animation: progress-indicator 2.5s ease-in-out infinite alternate;
-}
-
-@keyframes progress-indicator {
-	from { opacity: .75; }
-	to { opacity: 1; }
-}
-
-.track-item--active .track-number--playing {
-	animation: active-track 1.2s ease-in-out infinite;
-}
-
-@keyframes active-track {
-	0%, 100% { opacity: .65; }
-	50% { opacity: 1; }
-}
-
-/* Активный трек отмечен декоративной полосой через ::before. */
-.track-item--active::before {
-	content: "";
-}
-
-/* Значения прогресса карточек задаются классами, без inline-style. */
+/* Ширины прогресса карточек — классами, без inline-style */
 .card-progress-fill--30 { width: 30%; }
 .card-progress-fill--60 { width: 60%; }
 .card-progress-fill--45 { width: 45%; }
@@ -774,31 +735,32 @@ h1 span {
 	outline-offset: 3px;
 }
 
-/* Адаптация шапки на узких экранах. */
-@media (max-width: 560px) {
-	.topbar {
-		height: auto;
-		min-height: 72px;
-		flex-wrap: wrap;
-		gap: 14px;
-		padding: 14px 0;
+/* Анимации */
+.progress__fill {
+	background: linear-gradient(90deg, #159447, var(--green), #72e995);
+	animation: progress-indicator 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes progress-indicator {
+	from {
+		opacity: .75;
 	}
-	.main-nav {
-		order: 3;
-		width: 100%;
-		justify-content: space-between;
-		gap: 12px;
+	to {
+		opacity: 1;
 	}
-	.main-nav__link--active::after {
-		bottom: -8px;
+}
+
+.track-item--active .track-number--playing {
+	animation: active-track 1.2s ease-in-out infinite;
+}
+
+@keyframes active-track {
+	0%,
+	100% {
+		opacity: .65;
 	}
-	.profile {
-		margin-left: auto;
-	}
-	.welcome {
-		align-items: flex-start;
-		flex-direction: column;
-		gap: 16px;
+	50% {
+		opacity: 1;
 	}
 }
 
@@ -806,5 +768,79 @@ h1 span {
 	.progress__fill,
 	.track-item--active .track-number--playing {
 		animation: none;
+	}
+}
+
+/* Адаптив */
+@media (max-width: 1024px) {
+	.popular-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (max-width: 820px) {
+	.app-shell {
+		width: min(620px, calc(100% - 36px));
+	}
+
+	.content-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.cover-wrap {
+		height: clamp(230px, 55vw, 340px);
+	}
+
+	.popular-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 560px) {
+	.app-shell {
+		width: calc(100% - 28px);
+	}
+
+	.popular-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.topbar {
+		height: auto;
+		min-height: 72px;
+		flex-wrap: wrap;
+		gap: 14px;
+		padding: 14px 0;
+	}
+
+	.main-nav {
+		order: 3;
+		width: 100%;
+		justify-content: space-between;
+		gap: 12px;
+	}
+
+	.main-nav__link--active::after {
+		bottom: -8px;
+	}
+
+	.profile {
+		margin-left: auto;
+	}
+
+	.welcome {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	.footer {
+		flex-wrap: wrap;
+		line-height: 1.6;
+	}
+
+	.footer span:nth-child(2) {
+		order: 3;
+		width: 100%;
 	}
 }

@@ -12,17 +12,20 @@
 <body>
 
 	<div class="app-shell">
-		<!-- ШАПКА -->
+
+		<!-- Шапка -->
 		<header class="topbar">
 			<a class="brand" href="#">
 				<span class="brand__mark">S</span>
 				<span>AMP<span class="brand__dot">.</span></span>
 			</a>
+
 			<nav class="main-nav" aria-label="Основная навигация">
 				<a class="main-nav__link main-nav__link--active" href="#player">Плеер</a>
 				<a class="main-nav__link" href="#tracks">Моя музыка</a>
 				<a class="main-nav__link" href="#about">О проекте</a>
 			</nav>
+
 			<div class="profile">
 				<span class="profile__status"></span>
 				<span>Гость</span>
@@ -31,7 +34,8 @@
 		</header>
 
 		<main id="player">
-			<!-- ЗАГОЛОВОК -->
+
+			<!-- Приветствие -->
 			<section class="welcome">
 				<div>
 					<p class="eyebrow"><span class="eyebrow__line"></span> YOUR DAILY SOUNDTRACK</p>
@@ -41,8 +45,10 @@
 				<div class="live-pill"><span></span> SOUND EXPERIENCE</div>
 			</section>
 
-			<!-- ВЕРХНЯЯ ЧАСТЬ: ПЛЕЕР И ПЛЕЙЛИСТ -->
+			<!-- Плеер и плейлист -->
 			<div class="content-grid">
+
+				<!-- Сейчас играет -->
 				<section class="now-playing panel" aria-labelledby="now-title">
 					<div class="section-heading">
 						<div>
@@ -82,6 +88,7 @@
 						<button class="control-button" type="button" aria-label="Следующий">|▶</button>
 						<button class="control-button control-button--small" type="button" aria-label="Повтор">↻</button>
 					</div>
+
 					<div class="volume-row">
 						<span>♫</span>
 						<div class="volume-track"><span></span></div>
@@ -89,13 +96,19 @@
 					</div>
 				</section>
 
-				<!-- БОКОВАЯ ПАНЕЛЬ С ТРЕКАМИ -->
+				<!-- Боковая панель -->
 				<aside class="side-column">
+
+					<!-- Следующие треки -->
 					<section class="playlist panel" id="tracks">
 						<div class="section-heading section-heading--compact">
-							<div><p class="eyebrow">ПОДБОРКА</p><h2>Следующие треки</h2></div>
+							<div>
+								<p class="eyebrow">ПОДБОРКА</p>
+								<h2>Следующие треки</h2>
+							</div>
 							<a class="text-link" href="#tracks">Все <span>↗</span></a>
 						</div>
+
 						<div class="track-list">
 							<button class="track-item track-item--active" type="button">
 								<span class="track-number track-number--playing">♫</span>
@@ -120,25 +133,31 @@
 						</div>
 					</section>
 
+					<!-- Подсказка -->
 					<section class="tip-card" id="about">
 						<span class="tip-card__icon">✦</span>
-						<div><strong>Твоя музыка — твои правила</strong><p>Создай настроение одним нажатием.</p></div>
+						<div>
+							<strong>Твоя музыка — твои правила</strong>
+							<p>Создай настроение одним нажатием.</p>
+						</div>
 					</section>
+
 				</aside>
 			</div>
 
-			<!-- БЛОК: ПОПУЛЯРНЫЕ ТРЕКИ -->
+			<!-- Популярные треки -->
 			<section class="popular-section">
 				<div class="section-heading">
 					<h2>Популярные треки</h2>
 					<a href="#" class="text-link">Смотреть все <span>→</span></a>
 				</div>
-				
+
 				<div class="popular-grid">
+
 					<article class="popular-card">
 						<div class="popular-cover">
 							<img src="images/1_trend.jpg" alt="На высоте">
-							<button class="play-overlay" aria-label="Играть">▶</button>
+							<button class="play-overlay" type="button" aria-label="Играть">▶</button>
 						</div>
 						<div class="popular-info">
 							<h3>На высоте</h3>
@@ -153,7 +172,7 @@
 					<article class="popular-card">
 						<div class="popular-cover">
 							<img src="images/2_trend.jpg" alt="Город и мы">
-							<button class="play-overlay" aria-label="Играть">▶</button>
+							<button class="play-overlay" type="button" aria-label="Играть">▶</button>
 						</div>
 						<div class="popular-info">
 							<h3>Город и мы</h3>
@@ -168,7 +187,7 @@
 					<article class="popular-card">
 						<div class="popular-cover">
 							<img src="images/3_trend.jpg" alt="Бесконечность">
-							<button class="play-overlay" aria-label="Играть">▶</button>
+							<button class="play-overlay" type="button" aria-label="Играть">▶</button>
 						</div>
 						<div class="popular-info">
 							<h3>Бесконечность</h3>
@@ -183,7 +202,7 @@
 					<article class="popular-card">
 						<div class="popular-cover">
 							<img src="images/4_trend.jpg" alt="Тише">
-							<button class="play-overlay" aria-label="Играть">▶</button>
+							<button class="play-overlay" type="button" aria-label="Играть">▶</button>
 						</div>
 						<div class="popular-info">
 							<h3>Тише</h3>
@@ -194,15 +213,20 @@
 							<span class="card-time">3:40</span>
 						</div>
 					</article>
+
 				</div>
 			</section>
+
 		</main>
 
+		<!-- Подвал -->
 		<footer class="footer">
 			<span>© 2026 AMP MUSIC</span>
 			<span>Учебный проект · Практическая работа № 6 · Вариант 3</span>
 			<a href="#player">Наверх ↑</a>
 		</footer>
+
 	</div>
+
 </body>
 </html>
